@@ -1,0 +1,160 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      line-height: 1.6;
+      color: #1C1C1C;
+    }
+
+    header {
+      background-color: #4E342E;
+      color: white;
+      padding: 4px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    main {
+      max-width: 1024px;
+      margin: 40px auto;
+      background:  #FAF4EC;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      color: ;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-family: Brush Script MT, Brush Script Std, cursive;
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .icone {
+    margin-bottom: 300px;
+    }
+
+/* ============================================= */
+/* MENU RESPONSIVO */
+/* ============================================= */
+
+#bt_menu {
+    display: none;
+}
+
+label[for="bt_menu"] {
+    display: none;
+    padding: 10px;
+    background-color: #4E342E;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu {
+    background-color: #4E342E;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu > ul > li {
+    position: relative;
+}
+
+.menu > ul > li > a {
+    display: block;
+    padding: 20px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.menu > ul > li > a:hover {
+    background-color: #4E342E;
+
+}
+
+.menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4E342E;
+    min-width: 200px;
+    z-index: 1000;
+}
+
+.menu ul ul li {
+    border-bottom: 1px solid #4E342E;
+}
+
+.menu ul ul li a {
+    padding: 12px 20px;
+    color: white;
+    display: block;
+}
+
+.menu > ul > li:hover > ul {
+    display: block;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
+
+@media (max-width: 1024px) {
+    .boxes-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    label[for="bt_menu"] {
+        display: block;
+    }
+
+    .menu ul {
+    display: none;
+    flex-direction: column;
+    }
+
+    #bt_menu:checked ~ .menu ul {
+        display: flex;
+    }
+
+    .menu ul ul {
+        position: static;
+        width: 100%;
+    }
+
+    .boxes-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .boxes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-box img {
+        height: 220px;
+    }
+}
